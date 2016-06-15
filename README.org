@@ -1,0 +1,19 @@
+* php-styles.el
+
+  PHP mode does not provide an easy way to switch to a different coding style,
+  which makes it a pain to edit multiple files in different types of projects in
+  a single Emacs session. This package provide some helper functions to do it.
+** Usage
+
+   To enable this package, add the php-styles-php-mode-config function to
+   php-mode-hook :
+
+#+begin_src emacs-lisp
+   (add-hook 'php-mode-hook 'php-styles-mode-config)
+#+end_src
+
+   You will then be able to use the php-switch-to-psr-2,
+   php-styles-switch-to-wordpress and php-styles-switch-to-spip commands.
+
+   We will try to guess the coding style by searching for a common file. You can
+   disable this feature using the php-style-guess customizable variable.
