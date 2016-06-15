@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<ruleset name="SPIP">
+<!--
+  Liens utiles
+    documentation : http://contrib.spip.net/style-code-php
+    https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+    https://github.com/ucfcdl/fuelphp-phpcs/tree/master/Standards/FuelPHP
+    https://github.com/vanilla/addons/tree/master/standards/Vanilla
+-->
+
+  <description>Coding rules for SPIP</description>
+
+  <!-- Appliquer PSR-2 moins nos exceptions -->
+  <rule ref="PSR2" >
+    <!-- Désactiver la vérification sur les noms de classes/fonctions -->
+    <exclude name="Squiz.Classes.ValidClassName" />
+    <!-- Désactiver la vérification sur l'indentation -->
+    <exclude name="Generic.WhiteSpace.ScopeIndent" />
+    <exclude name="Generic.WhiteSpace.DisallowTabIndent" />
+    <!-- Désactiver la vérification sur les accolades -->
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+    <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine" />
+    <exclude name="PSR2.Classes.PropertyDeclaration" />
+  </rule>
+
+  <!-- Tabulations pour l'indentation -->
+  <arg name="tab-width" value="4"/>
+  <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="4"/>
+      <property name="tabIndent" value="true"/>
+    </properties>
+  </rule>
+
+  <!-- Accolades -->
+  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+  <rule ref="Generic.ControlStructures.InlineControlStructure" />
+  <rule ref="Squiz.ControlStructures.ControlSignature" />
+  <rule ref="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Guillemets doubles -->
+  <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+  <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Constantes en majuscules -->
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+</ruleset>
