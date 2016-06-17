@@ -41,9 +41,6 @@
 
 ;;; Code:
 
-(require 'php-mode)
-(require 'flycheck)
-
 (add-to-list 'load-path (file-name-directory load-file-name))
 
 (defgroup php-styles nil
