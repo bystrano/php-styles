@@ -74,7 +74,7 @@ function that allows to change the current editing style to it.")
 (defun php-styles-configure-psr-2 ()
   "Configure php-mode to use the PSR-2 style."
 
-  (custom-set-variables '(php-mode-coding-style "PSR-2")
+  (custom-set-variables '(php-mode-coding-style 'psr2)
                         '(phpcbf-standard "PSR-2"))
   (setq flycheck-phpcs-standard "PSR2"))
 
@@ -83,7 +83,7 @@ function that allows to change the current editing style to it.")
 Use PSR-2, but indent with tabs and configure flycheck and phpcbf
 to use SPIP's coding style."
 
-  (custom-set-variables '(php-mode-coding-style "PSR-2")
+  (custom-set-variables '(php-mode-coding-style 'psr2)
                         '(phpcbf-standard (locate-file "phpcs-SPIP.xml" load-path)))
   (setq indent-tabs-mode t
         flycheck-phpcs-standard (locate-file "phpcs-SPIP.xml" load-path)))
@@ -91,7 +91,7 @@ to use SPIP's coding style."
 (defun php-styles-configure-wordpress ()
   "Configure php-mode for Wordpress."
 
-  (custom-set-variables '(php-mode-coding-style "WordPress")
+  (custom-set-variables '(php-mode-coding-style 'wordpress)
                         '(phpcbf-standard "WordPress"))
   (php-enable-wordpress-coding-style)
   (setq flycheck-phpcs-standard "WordPress"))
