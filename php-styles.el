@@ -86,6 +86,7 @@ to use SPIP's coding style."
   (custom-set-variables '(php-mode-coding-style 'psr2)
                         '(phpcbf-standard (locate-file "phpcs-SPIP.xml" load-path)))
   (setq indent-tabs-mode t
+        c-basic-offset tab-width
         flycheck-phpcs-standard (locate-file "phpcs-SPIP.xml" load-path)))
 
 (defun php-styles-configure-wordpress ()
